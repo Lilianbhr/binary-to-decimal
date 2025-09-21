@@ -1,3 +1,7 @@
+import sys
+import os
+
+
 def convert_binary_to_decimal(binary_number: str) -> int:
     """
     take a binary number of 8 bit and convert it to decimal
@@ -38,3 +42,16 @@ def reverse(chain: str) -> str:
     for character in range(len(chain)):
         result += chain[pos - character]
     return result
+
+
+def get_resource_path(relative_path: str) -> str:
+    """
+    construct resource's path by using _MEIPASS if project is compiled
+    :param relative_path: string (resource's path from script's folder)
+    :return: full path (useful when the project is compiled)
+    """
+    if hasattr(sys, '_MEIPASS'):
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
