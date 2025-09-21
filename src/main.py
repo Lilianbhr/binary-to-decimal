@@ -9,6 +9,7 @@ pygame.display.set_caption("Bin2Dec")
 # Colors
 white = pygame.Color(255, 255, 255)
 black = pygame.Color(0, 0, 0)
+grey = pygame.Color(235, 235, 235)
 red = pygame.Color(255, 0, 0)
 
 # Main loop
