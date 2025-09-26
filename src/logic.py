@@ -59,3 +59,19 @@ def get_resource_path(relative_path: str) -> str:
     else:
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
+
+
+def character_verification(character: str, mode: int) -> bool:
+    """
+    verify if the user input can be used in the code
+    :param character: string
+    :param mode: integer, 0 for binary and 1 for decimal
+    :return: bool, True if character can be used
+    """
+    if mode:    # Decimal
+        if ord('0') <= ord(character) <= ord('9'):
+            return True
+    else:   # Binary
+        if character == '0' or character == '1':
+            return True
+    return False
