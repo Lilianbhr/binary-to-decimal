@@ -1,5 +1,5 @@
 import pygame
-from display import Area
+from display import *
 from logic import *
 pygame.init()
 
@@ -25,6 +25,7 @@ else:
     user_input = ""
 surface1 = Area(grey, (width, height))
 surface2 = Area(white, (width, height))
+button = Button((width, height))
 
 # Main loop
 running = True
@@ -45,6 +46,8 @@ while running:
         surface1.draw(screen, "binary", tmp_user_input, [dark_grey1, black], 0)
         surface2.draw(screen, "decimal", converted_input, [dark_grey2, black], width//2)
 
+    button.draw(screen)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -59,6 +62,12 @@ while running:
                     if user_input == '0':
                         user_input = ""
                     user_input += character
+        elif pygame.mouse.get_pressed() == (1, 0, 0):
+            if button.clicked(pygame.mouse.get_pos()):
+                mode = 1 - mode
+                if mode and user_input == "":
+                    user_input = "0"
+                user_input = converted_input
 
     pygame.display.flip()
 

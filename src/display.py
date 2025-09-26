@@ -42,3 +42,20 @@ class Area:
         self.area.blit(text, text_pos)
 
         screen.blit(self.area, (0, area_pos))
+
+
+class Button:
+    def __init__(self, screen_size: tuple[int, int]):
+        """
+        the button allow the user to invert the convertion direction
+        :param screen_size: tuple, first integer for width, second integer for height
+        """
+        self.image = pygame.image.load("../assets/swap.png").convert_alpha()
+        self.image = pygame.transform.scale(self.image, (25, 25))
+        self.position = self.image.get_rect(centerx=screen_size[0]//2, centery=screen_size[1]//2)
+
+    def draw(self, screen: pygame.Surface) -> None:
+        screen.blit(self.image, self.position)
+
+    def clicked(self, mouse_pos: tuple) -> bool:
+        return self.position.collidepoint(mouse_pos)
