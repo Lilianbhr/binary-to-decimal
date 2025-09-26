@@ -3,6 +3,7 @@ This module contain two class that manage the UI
 """
 
 import pygame
+from logic import get_resource_path
 
 
 class Area:
@@ -16,7 +17,7 @@ class Area:
         self.bg_color = pygame.Color(color)
         self.screen_width, self.screen_height = screen
         self.area = pygame.surface.Surface((self.screen_width, self.screen_height // 2))
-        self.font = pygame.font.Font("../assets/font.ttf", 25)
+        self.font = pygame.font.Font(get_resource_path("../assets/font.ttf"), 25)
 
     def draw(self, screen: pygame.Surface, data_type: str, data: str,
              text_colors: list[tuple, tuple], area_pos: int) -> None:
@@ -50,7 +51,7 @@ class Button:
         the button allow the user to invert the convertion direction
         :param screen_size: tuple, first integer for width, second integer for height
         """
-        self.image = pygame.image.load("../assets/swap.png").convert_alpha()
+        self.image = pygame.image.load(get_resource_path("../assets/swap.png")).convert_alpha()
         self.image = pygame.transform.scale(self.image, (25, 25))
         self.position = self.image.get_rect(centerx=screen_size[0]//2, centery=screen_size[1]//2)
 

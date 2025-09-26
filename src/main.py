@@ -9,7 +9,7 @@ width = 500
 height = 500
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Bin2Dec")
-pygame.display.set_icon(pygame.image.load("../assets/swap.png").convert_alpha())
+pygame.display.set_icon(pygame.image.load(get_resource_path("../assets/swap.png")).convert_alpha())
 
 # Colors
 white = (255, 255, 255)
