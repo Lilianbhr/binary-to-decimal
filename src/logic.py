@@ -1,3 +1,7 @@
+"""
+This module contain all the functions used for convertion and path attribution
+"""
+
 import sys
 import os
 
