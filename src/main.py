@@ -1,4 +1,5 @@
-import pygame
+# Version 1.1 -> 26/09/2025 (dd/mm/yyyy)
+
 from display import *
 from logic import *
 pygame.init()
@@ -31,6 +32,7 @@ button = Button((width, height))
 running = True
 while running:
 
+    # Draw elements on screen
     if mode:
         if int(user_input) > 255:
             user_input = "255"
@@ -48,6 +50,7 @@ while running:
 
     button.draw(screen)
 
+    # Events management
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
