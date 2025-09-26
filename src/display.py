@@ -1,3 +1,7 @@
+"""
+This module contain two class that manage the UI
+"""
+
 import pygame
 
 
