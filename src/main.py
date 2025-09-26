@@ -1,16 +1,21 @@
 import pygame
+from display import Area
+from logic import *
+pygame.init()
 
 # Window
 width = 500
 height = 500
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Bin2Dec")
+pygame.display.set_icon(pygame.image.load("../assets/swap.png").convert_alpha())
 
 # Colors
-white = pygame.Color(255, 255, 255)
-black = pygame.Color(0, 0, 0)
-grey = pygame.Color(235, 235, 235)
-red = pygame.Color(255, 0, 0)
+white = (255, 255, 255)
+black = (0, 0, 0)
+grey = (235, 235, 235)
+dark_grey1 = (161, 161, 161)
+dark_grey2 = (181, 181, 181)
 
 # Main loop
 running = True
