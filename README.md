@@ -24,4 +24,5 @@ constraints:
 -   User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was entered
 
 ## More
-this project contain a little bit more functionalities than initialy asked by the exercises maker
+-   This project contain a little bit more functionalities than initialy asked by the exercises maker
+-   you can download a single file in .exe that don't need the whole project to be download, you can find it in 'compiled-project'
